@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!-- FavIcon and Title -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div id="heading-bar">
+      <div id="navbar">
+        <div id="nav-item">
+          <button class="menu-toggler" type="button" onclick="OpenMenu()" aria-label="Menu Toggler"></button>
+          <a class="brand" href="#" aria-label="Brand"></a>
+        </div>
+        <div id="menu">
+          <div class="menu-container">
+            <button class="close-btn" type="button" onclick="CloseMenu()" aria-label="Close Menu"></button>
+            <ul>
+              <li class="menu-item">
+                <a href="#" aria-label="Collections">Collections</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" aria-label="Men">Men</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" aria-label="Women">Women</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" aria-label="About">About</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" aria-label="Contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="heading-btn">
+        <button class="cart-btn" type="button" aria-label="Cart"></button>
+        <button class="profile-btn" type="button" aria-label="Profile"></button>
+        <div id="cart">
+          <h3>Cart</h3>
+          <hr>
+          <p class="empty-cart-text">Your cart is empty.</p>
+          <ul class="product-list"></ul>
+          <div class="checkout-btn">
+            <button type="button" aria-label="Checkout">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div id="product-images">
+      <img class="main-image" src="./images/image-product-1.jpg" alt="image-product-1">
+      <div class="arrow-btn">
+        <button class="previous-btn" type="button" onclick="OpenPreviousImage()" aria-label="Previous Button"></button>
+        <button class="next-btn" type="button" onclick="OpenNextImage()" aria-label="Next Button"></button>
+      </div>
+      <ul class="other-images">
+        <li class="chosen">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="image-product-1"><span></span>
+        </li>
+        <li>
+          <img src="./images/image-product-2-thumbnail.jpg" alt="image-product-2"><span></span>
+        </li>
+        <li>
+          <img src="./images/image-product-3-thumbnail.jpg" alt="image-product-3"><span></span>
+        </li>
+        <li>
+          <img src="./images/image-product-4-thumbnail.jpg" alt="image-product-4"><span></span>
+        </li>
+      </ul>
+    </div>
+    <div id="product-info">
+      <div class="container">
+        <p class="company-name">Sneaker Company</p>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+      </div>
+    </div>
+    <div id="product-price">
+      <div class="container">
+        <div class="current-price">
+          <h2>$125.00</h2>
+          <p class="discount">50%</p>
+        </div>
+        <p class="actual-price">$250.00</p>
+      </div>
+    </div>
+    <div id="amount-and-add-btn">
+      <div class="container">
+        <div class="amount">
+          <button class="minus" type="button" onclick="MinusNumber()" aria-label="Minus number of product"></button>
+          <p class="number-of-items">0</p>
+          <button class="plus" type="button" onclick="PlusNumber()" aria-label="Plus number of product"></button>
+        </div>
+        <button class="add-to-cart" type="button" onclick="AddProductToCart()" aria-label="Add to cart">
+          <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <div id="modal">
+    <div class="modal-container">
+      <button class="close-btn" type="button" onclick="CloseModal()" aria-label="Close Modal"></button>
+      <img class="main-image" src="./images/image-product-1.jpg" alt="image-product-1">
+      <div class="arrow-btn">
+        <button class="previous-btn" type="button" onclick="OpenPreviousImage()" aria-label="Previous Button"></button>
+        <button class="next-btn" type="button" onclick="OpenNextImage()" aria-label="Next Button"></button>
+      </div>
+      <ul class="other-images">
+        <li class="chosen">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="image-product-1"><span></span>
+        </li>
+        <li>
+          <img src="./images/image-product-2-thumbnail.jpg" alt="image-product-2"><span></span>
+        </li>
+        <li>
+          <img src="./images/image-product-3-thumbnail.jpg" alt="image-product-3"><span></span>
+        </li>
+        <li>
+          <img src="./images/image-product-4-thumbnail.jpg" alt="image-product-4"><span></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
